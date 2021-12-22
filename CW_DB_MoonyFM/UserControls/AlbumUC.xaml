@@ -1,0 +1,54 @@
+﻿<UserControl x:Class="CW_DB_MoonyFM.UserControls.AlbumUC"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CW_DB_MoonyFM.UserControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0" Margin="10" CornerRadius="10" Padding="30 15"
+                Background="{StaticResource OffWhiteBrush}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Grid.Column="0" VerticalAlignment="Center" Margin="20 0">
+                    <Image x:Name="albumCover" MaxHeight="150" MaxWidth="150"/>
+                </StackPanel>
+                
+                <StackPanel Grid.Column="1" VerticalAlignment="Center" Margin="20 0">
+                    <TextBlock FontSize="{StaticResource FontSizeLarge}" x:Name="blockAlbumName" 
+                               Text="ALBUM'S NAME" HorizontalAlignment="Center"/>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center"> 
+                        <TextBlock Text="Исполнитель:" Margin="0 0 20 0"/>
+                        <TextBlock x:Name="blockArtistName" Text="ARTIST'S NAME"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <TextBlock Text="Год выпуска:" Margin="0 0 20 0"/>
+                        <TextBlock x:Name="blockYear" Text="RELEASE DATE"/>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Grid.Column="2">
+                    <Button Name="showSongs" Content="Песни" IsEnabled="True" 
+                            Visibility="Visible"
+                            HorizontalAlignment="Center" VerticalAlignment="Center" Click="showSongs_Click"/>
+                </StackPanel>
+                <StackPanel x:Name="adminButtons" Grid.Column="3" Margin="20 0 0 0" Visibility="Collapsed"
+                            VerticalAlignment="Center">
+                    <Button Name="editAlbum" Content="Изменить" IsEnabled="True" 
+                            Visibility="Visible" Margin="0 0 0 5" Click="editAlbum_Click"/>
+                    <Button Name="deleteAlbum" Content="Удалить" IsEnabled="True" 
+                            Visibility="Visible" Margin="0"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>
